@@ -3,72 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chromedex Archive</title>
+    <title>Jacob's Chromedex</title>
     <style>
-        /* body { 
-  font-family: 'Inter', sans-serif; 
-  background: #050a10; 
-  color: #ffffff;
-  margin: 0;
-  text-align: center;
-}
+        /* Jacob's Sleek Ice Blue Theme */
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #050a10; 
+            color: #ffffff;
+            margin: 0;
+            text-align: center;
+        }
 
-h1 { font-weight: 200; letter-spacing: 12px; text-transform: uppercase; margin: 60px 0 30px; color: #a0eaff; }
+        h1 { 
+            font-weight: 200; 
+            letter-spacing: 12px; 
+            text-transform: uppercase; 
+            margin: 60px 0 30px; 
+            color: #a0eaff; 
+        }
 
-/* Sticky Search Bar */
-#search-container { margin-bottom: 50px; position: sticky; top: 25px; z-index: 100; }
-#search-input { 
-  padding: 15px 30px; width: 350px; border-radius: 50px; border: 1px solid rgba(160, 234, 255, 0.3); 
-  background: rgba(160, 234, 255, 0.05); backdrop-filter: blur(10px); color: #a0eaff; outline: none;
-}
+        /* Sticky Search Bar */
+        #search-container { 
+            margin-bottom: 50px; 
+            position: sticky; 
+            top: 25px; 
+            z-index: 100; 
+        }
+        
+        #search-input { 
+            padding: 15px 30px; 
+            width: 350px; 
+            border-radius: 50px; 
+            border: 1px solid rgba(160, 234, 255, 0.3); 
+            background: rgba(160, 234, 255, 0.05); 
+            backdrop-filter: blur(10px); 
+            color: #a0eaff; 
+            outline: none;
+            font-size: 1rem;
+        }
 
-/* Card Grid */
-#pokedex { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 20px; padding: 0 40px 100px; }
-.card { 
-  background: rgba(160, 234, 255, 0.03); border: 1px solid rgba(160, 234, 255, 0.1);
-  border-radius: 20px; padding: 20px; cursor: pointer; transition: 0.3s;
-}
-.card:hover { transform: translateY(-5px); border-color: #a0eaff; background: rgba(160, 234, 255, 0.1); }
-.card img { width: 100px; filter: drop-shadow(0 0 8px rgba(160, 234, 255, 0.3)); }
-.card h3 { text-transform: capitalize; color: #a0eaff; font-size: 1rem; margin: 10px 0; }
+        /* Card Grid */
+        #pokedex { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
+            gap: 20px; 
+            padding: 0 40px 100px; 
+        }
 
-/* Fixed Centered Modal */
-#modal { 
-  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-  background: rgba(0, 0, 0, 0.9); z-index: 1000; pointer-events: auto;
-}
-#modal-card { 
-  background: #0a1118; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  padding: 40px; width: 280px; border-radius: 30px; border: 1px solid #a0eaff;
-}
-#close-btn { 
-  background: #a0eaff; color: #050a10; border: none; padding: 10px 30px; 
-  border-radius: 20px; cursor: pointer; font-weight: bold; margin-top: 20px;
-}
- */
-        body { font-family: sans-serif; background: #050a10; color: #ffffff; text-align: center; margin: 0; }
-        h1 { font-weight: 200; letter-spacing: 10px; text-transform: uppercase; margin: 40px 0; color: #a0eaff; }
-        #search-container { margin-bottom: 30px; position: sticky; top: 20px; z-index: 100; }
-        #search-input { padding: 15px 30px; width: 300px; border-radius: 50px; border: 1px solid #a0eaff; background: rgba(160, 234, 255, 0.1); color: white; outline: none; }
-        #pokedex { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px; }
-        .card { background: rgba(160, 234, 255, 0.05); border: 1px solid rgba(160, 234, 255, 0.2); border-radius: 20px; padding: 20px; width: 140px; cursor: pointer; transition: 0.3s; }
-        .card:hover { border-color: #a0eaff; transform: scale(1.05); }
-        .card img { width: 100px; filter: drop-shadow(0 0 8px #a0eaff); }
-        .card h3 { text-transform: capitalize; color: #a0eaff; margin: 10px 0; }
-        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; }
-        #modal-card { background: #0a1118; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 40px; border-radius: 30px; border: 1px solid #a0eaff; width: 280px; }
-        #close-btn { background: #a0eaff; border: none; padding: 10px 30px; border-radius: 20px; cursor: pointer; font-weight: bold; }
+        .card { 
+            background: rgba(160, 234, 255, 0.03); 
+            border: 1px solid rgba(160, 234, 255, 0.1);
+            border-radius: 20px; 
+            padding: 20px; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+
+        .card:hover { 
+            transform: translateY(-5px); 
+            border-color: #a0eaff; 
+            background: rgba(160, 234, 255, 0.1); 
+        }
+
+        .card img { 
+            width: 100px; 
+            filter: drop-shadow(0 0 8px rgba(160, 234, 255, 0.3)); 
+        }
+
+        .card h3 { 
+            text-transform: capitalize; 
+            color: #a0eaff; 
+            font-size: 1rem; 
+            margin: 10px 0; 
+        }
+
+        /* Fixed Centered Modal */
+        #modal { 
+            display: none; 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.9); 
+            z-index: 1000; 
+            pointer-events: auto;
+        }
+
+        #modal-card { 
+            background: #0a1118; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+            padding: 40px; 
+            width: 280px; 
+            border-radius: 30px; 
+            border: 1px solid #a0eaff;
+        }
+
+        #close-btn { 
+            background: #a0eaff; 
+            color: #050a10; 
+            border: none; 
+            padding: 10px 30px; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
 
     <div id="app-wrapper">
-        <h1>The 151 Archive</h1>
+        <h1>Jacob's Chromedex!</h1>
+
         <div id="search-container">
             <input type="text" id="search-input" placeholder="SEARCH POKÉMON..." onkeyup="searchPokemon()">
         </div>
+
         <div id="pokedex">Initializing Database...</div>
 
+        <!-- Detail Pop-up -->
         <div id="modal">
             <div id="modal-card">
                 <div id="modal-content"></div>
@@ -78,83 +135,33 @@ h1 { font-weight: 200; letter-spacing: 12px; text-transform: uppercase; margin: 
     </div>
 
     <script>
-        /* const pokedex = document.getElementById('pokedex');
-
-async function getPokemon() {
-    pokedex.innerHTML = 'Connecting to PokeAPI...';
-    
-    // Simple Loop - loads them one by one
-    for (let i = 1; i <= 20; i++) {
-        try {
-            const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
-            const res = await fetch(url);
-            const data = await res.json();
-
-            const pokemonHTML = `
-                <div class="card" onclick='showDetails(${JSON.stringify(data)})'>
-                    <img src="${data.sprites.front_default}" />
-                    <h3>${data.name}</h3>
-                    <p style="color:#a0eaff; opacity:0.5">#${data.id}</p>
-                </div>
-            `;
-            
-            // This clears "Loading..." only on the first Pokemon
-            if (i === 1) pokedex.innerHTML = '';
-            pokedex.innerHTML += pokemonHTML;
-        } catch (err) {
-            console.log("Error loading #" + i);
-        }
-    }
-}
-
-function showDetails(pokemon) {
-    const modal = document.getElementById('modal');
-    const content = document.getElementById('modal-content');
-    content.innerHTML = `
-      <img src="${pokemon.sprites.front_default}" style="width:150px">
-      <h2 style="text-transform: capitalize; color:#a0eaff;">${pokemon.name}</h2>
-      <p>Type: ${pokemon.types[0].type.name}</p>
-      <p>Height: ${pokemon.height / 10}m | Weight: ${pokemon.weight / 10}kg</p>
-    `;
-    modal.style.display = 'block';
-}
-
-function closeModal() {
-    document.getElementById('modal').style.display = 'none';
-}
-
-function searchPokemon() {
-    const term = document.getElementById('search-input').value.toLowerCase();
-    const cards = document.getElementsByClassName('card');
-    Array.from(cards).forEach(card => {
-        const name = card.querySelector('h3').innerText.toLowerCase();
-        card.style.display = name.includes(term) ? "block" : "none";
-    });
-}
-
-getPokemon();
- */
         const pokedex = document.getElementById('pokedex');
 
         async function getPokemon() {
-            pokedex.innerHTML = 'Connecting...';
+            pokedex.innerHTML = 'Connecting to PokeAPI...';
+            
+            // Loop for the first 20 Pokémon
             for (let i = 1; i <= 20; i++) {
                 try {
-                    const url = `https://pokeapi.co{i}/`;
+                    const url = `https://pokeapi.co/api/v2/pokemon/${i}/`;
                     const res = await fetch(url);
                     const data = await res.json();
 
-                    const pokemonHTML = `
-                        <div class="card" onclick='showDetails(${JSON.stringify(data)})'>
-                            <img src="${data.sprites.front_default}" />
-                            <h3>${data.name}</h3>
-                            <p style="color:#a0eaff; opacity:0.5">#${data.id}</p>
-                        </div>
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.onclick = () => showDetails(data);
+
+                    card.innerHTML = `
+                        <img src="${data.sprites.front_default}" alt="${data.name}" />
+                        <h3>${data.name}</h3>
+                        <p style="color:#a0eaff; opacity:0.5">#${data.id}</p>
                     `;
+                    
                     if (i === 1) pokedex.innerHTML = '';
-                    pokedex.innerHTML += pokemonHTML;
+                    pokedex.appendChild(card);
                 } catch (err) {
                     console.log("Error loading #" + i);
+                    pokedex.innerHTML = "Connection Error. Use Incognito Mode!";
                 }
             }
         }
@@ -162,11 +169,15 @@ getPokemon();
         function showDetails(pokemon) {
             const modal = document.getElementById('modal');
             const content = document.getElementById('modal-content');
+            
+            // Fixed the type mapping to prevent errors
+            const types = pokemon.types.map(t => t.type.name).join(', ');
+
             content.innerHTML = `
-              <img src="${pokemon.sprites.front_default}" style="width:150px">
+              <img src="${pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default}" style="width:150px">
               <h2 style="text-transform: capitalize; color:#a0eaff;">${pokemon.name}</h2>
-              <p>Type: ${pokemon.types[0].type.name}</p>
-              <p>Height: ${pokemon.height / 10}m | Weight: ${pokemon.weight / 10}kg</p>
+              <p style="text-transform: capitalize;"><strong>Type:</strong> ${types}</p>
+              <p><strong>Height:</strong> ${pokemon.height / 10}m | <strong>Weight:</strong> ${pokemon.weight / 10}kg</p>
             `;
             modal.style.display = 'block';
         }
@@ -184,7 +195,9 @@ getPokemon();
             });
         }
 
+        // Start the engine
         getPokemon();
     </script>
 </body>
 </html>
+
